@@ -1,0 +1,15 @@
+/* Style input fields */
+input.form-control {
+    margin-bottom: 10px;
+  }
+  
+  /* Button styling */
+  button {
+    margin-top: 10px;
+  }
+  
+  /* Add spacing between rows in the table */
+  .table tbody tr {
+    height: 50px;
+  }
+  

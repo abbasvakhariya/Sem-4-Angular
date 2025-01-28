@@ -1,0 +1,17 @@
+/* Light theme (default) */
+body {
+    background-color: white;
+    color: black;
+  }
+  
+  /* Dark theme */
+  body.dark-theme {
+    background-color: #121212;
+    color: white;
+  }
+  
+  /* Optional: Style the mat-slide-toggle to better reflect dark mode */
+  mat-slide-toggle {
+    color: #fff;
+  }
+  

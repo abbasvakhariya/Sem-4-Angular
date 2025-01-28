@@ -1,0 +1,49 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4">{{ title }}</h1>
+
+  <!-- Search input field -->
+  <div class="form-group">
+    <input 
+      type="text" 
+      class="form-control" 
+      placeholder="Search by Name or Email" 
+      [(ngModel)]="searchTerm" 
+      (input)="onSearch()">
+  </div>
+
+  <!-- Form to add or update a user -->
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Enter name" [(ngModel)]="userForm.name">
+    <input type="number" class="form-control" placeholder="Enter age" [(ngModel)]="userForm.age">
+    <input type="email" class="form-control" placeholder="Enter email" [(ngModel)]="userForm.email">
+    <button class="btn btn-primary mt-2" (click)="saveUser()">
+      {{ isEditing ? 'Update' : 'Add' }} User
+    </button>
+  </div>
+
+  <!-- Table to display users -->
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through filtered users to display each user -->
+      <tr *ngFor="let user of filteredUsers; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.age }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <!-- Edit button -->
+          <button class="btn btn-warning" (click)="editUser(i)">Edit</button>
+          <!-- Delete button -->
+          <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
