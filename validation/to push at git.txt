@@ -1,0 +1,4 @@
+to push at git
+1) git add .
+2) git commit -m "Initital Commit"
+3) git push origin master
